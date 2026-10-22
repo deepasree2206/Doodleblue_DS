@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eee7ff, #f8f5ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(80, 45, 130, 0.15);
+}
+
+.header {
+    background: #6c3fc5;
+    color: white;
+    padding: 30px 35px;
+}
+
+.header h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 14px;
+    color: #eee4ff;
+}
+
+.form-content {
+    padding: 30px 35px;
+}
+
+.section-title {
+    color: #6c3fc5;
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8def8;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #393044;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ded6e9;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: #fdfcff;
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #7b4bd0;
+    box-shadow: 0 0 0 3px #eee5ff;
+}
+
+.gender-options {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 8px 0;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: normal;
+}
+
+.gender-options input {
+    width: auto;
+    accent-color: #6c3fc5;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 25px 0;
+    font-size: 13px;
+    color: #5b5365;
+}
+
+.terms input {
+    width: auto;
+    margin-top: 2px;
+    accent-color: #6c3fc5;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register {
+    flex: 1;
+    background: #6c3fc5;
+    color: white;
+    border: 1px solid #6c3fc5;
+}
+
+.register:hover {
+    background: #512b9d;
+}
+
+.clear {
+    background: white;
+    color: #6c3fc5;
+    border: 1px solid #6c3fc5;
+}
+
+.clear:hover {
+    background: #f3edff;
+}
+
+.footer {
+    text-align: center;
+    background: #faf8ff;
+    padding: 16px;
+    font-size: 12px;
+    color: #756987;
+}
+
+@media (max-width: 550px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .header, .form-content {
+        padding: 24px 20px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Student Registration</h1>
+        <p>Create your student profile and begin your academic journey.</p>
+    </div>
+
+    <div class="form-content">
+
+        <form action="#" method="post">
+
+            <h3 class="section-title">Personal Information</h3>
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="field">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="student@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="Enter phone number"
+                           pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="field full">
+                    <label>Gender</label>
+                    <div class="gender-options">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                </div>
+
+                <div class="field full">
+                    <label for="address">Residential Address</label>
+                    <textarea id="address" name="address" rows="3"
+                              placeholder="Enter your complete address"></textarea>
+                </div>
+
+            </div>
+
+            <br>
+
+            <h3 class="section-title">Academic Information</h3>
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label for="college">College Name *</label>
+                    <input type="text" id="college" name="college"
+                           placeholder="Enter college name" required>
+                </div>
+
+                <div class="field">
+                    <label for="course">Course *</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select course</option>
+                        <option>B.E.</option>
+                        <option>B.Tech</option>
+                        <option>B.Sc.</option>
+                        <option>BCA</option>
+                        <option>B.Com.</option>
+                        <option>MCA</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="department">Department *</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select department</option>
+                        <option>Computer Science</option>
+                        <option>AI & Machine Learning</option>
+                        <option>Information Technology</option>
+                        <option>Electronics</option>
+                        <option>Mechanical</option>
+                        <option>Commerce</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="year">Year of Study *</label>
+                    <select id="year" name="year" required>
+                        <option value="">Select year</option>
+                        <option>First Year</option>
+                        <option>Second Year</option>
+                        <option>Third Year</option>
+                        <option>Final Year</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label for="password">Create Password *</label>
+                    <input type="password" id="password" name="password"
+                           placeholder="Minimum 8 characters"
+                           minlength="8" required>
+                </div>
+
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">
+                    I confirm that the information provided is correct
+                    and agree to the registration terms.
+                </label>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="register">
+                    Register Now →
+                </button>
+                <button type="reset" class="clear">
+                    Clear Form
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="footer">
+        © 2026 Student Registration Portal | All Rights Reserved
+    </div>
+
+</div>
+
+</body>
+</html>

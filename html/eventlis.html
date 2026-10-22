@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="mybutton">Click Me</button>
+
+<script>
+function showMessage() {
+    alert("Hello!");
+}
+
+function welcomeMessage() {
+    alert("Hello! Welcome to JavaScript!");
+}
+
+const button = document.getElementById("mybutton");
+
+button.addEventListener("click", showMessage);
+button.addEventListener("click", welcomeMessage);
+</script>
+
+</body>
+</html>
